@@ -4,7 +4,6 @@ import { BACKEND_URL } from "@/app/api/common/app.api";
 
 
 const authOptions: AuthOptions = {
-  debug: true,
   providers: [
     CredentialsProvider({
       name: "Credentials",
