@@ -22,6 +22,7 @@ export default async function Login(
         setCookie('auth-token', token, {
             // httpOnly: true,
             //secure: process.env.NODE_ENV === 'production',
+            secure: false,
             sameSite: 'strict',
             path: '/',
         });
