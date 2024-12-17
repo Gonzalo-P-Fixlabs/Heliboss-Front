@@ -10,21 +10,24 @@ export default async function Login(
 ): Promise<AuthResponse> {
     try {
         // const { setToken } = useAuthStore.getState();
+
         const response: AxiosResponse<AuthResponse> = await axios.post<AuthResponse>(
             `${BACKEND_URL}/user/authLogin`,
             { email, password },
             { headers: { 'Content-Type': 'application/json' } }
         );
+
         const token = response.data.access_token;
         // setToken(token);
         setCookie('auth-token', token, {
-            httpOnly: true,
+            // httpOnly: true,
             //secure: process.env.NODE_ENV === 'production',
             sameSite: 'strict',
             path: '/',
         });
         return response.data;
     } catch (error) {
+        console.log("error");
         throw error;
     }
 }

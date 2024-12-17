@@ -42,7 +42,6 @@ export default function LoginPage() {
 
   const { data: session, status } = useSession(); // Obtén la sesión y el estado de la sesión
   useEffect(() => {
-    console.log(session);
     if (session) {
       // Si ya hay una sesión activa, redirigimos al home
       router.push("/dashboard/productos"); // Redirige al home
